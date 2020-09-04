@@ -11,12 +11,14 @@ $.ajaxPrefilter(function (options) {
     }
     //当请求结束后判断用户的设置访问权限
     options.complete = function (res) {
+        console.log('wbquiiw')
         //当用户身份认证失败后
-        if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败!') {
+        if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             //1.强制清空本地tonke
             localStorage.removeItem('token')
             //2.强制跳转登录页
-            location.herf = '/login.html'
+            console.log('wquiwdqn')
+            location.href = '/login.html'
         }
     }
 })
